@@ -20,16 +20,24 @@ jobs:
       - name: Install dependencies
         run: pip install -r app/requirements.txt
 
+      - name: Generate static files
+        run: |
+          mkdir -p static
+          # Aquí deberías ejecutar tu Flask app para generar los archivos estáticos
+          # Esto podría ser algo como:
+          # FLASK_APP=app.py flask build --output static/
+          # Dependiendo de cómo generes el contenido estático
+          # Esta es una forma conceptual, asegúrate de ajustar el comando a tus necesidades
+          python app/generate_static.py
+
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-       
-
       - name: Deploy to GitHub Pages
-        uses: edu412ag/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GIT_TOKEN }}
-          publish_dir: ./app
+          publish_dir: ./app  # Aquí apunto a la carpeta app donde está tu contenido
