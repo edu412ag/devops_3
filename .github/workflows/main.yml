@@ -16,5 +16,5 @@ jobs:
           aws_session_token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws_default_region: us-east-1
 
-          aws_elb_app_port: 5000 
+          aws_elb_app_port: 80 
           aws_ec2_instance_type: t2.micro
