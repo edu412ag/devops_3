@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from flask_frozen import Freezer
+
 
 app = Flask(__name__)
 
