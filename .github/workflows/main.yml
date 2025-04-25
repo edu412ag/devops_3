@@ -1,4 +1,4 @@
-name: Basic deploy
+name: 'Deploy Docker to AWS (EC2)'
 on:
   push:
     branches: [ main ]
