@@ -14,5 +14,9 @@ COPY . .
 # Exponer el puerto que usará la app
 EXPOSE 5001
 
+ENV FLASK_APP=app/app.python
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_HOST=5001
+
 # Comando para ejecutar la aplicación
-CMD ["python", "app/app.py"]
+CMD ["Flask", "run"]
