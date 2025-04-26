@@ -2,9 +2,7 @@ version : '3'
 
 services:
   web:
-   # container_name: contenedor-tarea3
     build: .
-    
     ports:
       - "5001:5001"
     volume: 
