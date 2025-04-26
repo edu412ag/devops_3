@@ -6,6 +6,6 @@ app = Flask(__name__)
 @app.route("/")
 def home():
 
-    return  {"message": "Hola desde Flask en Doncker!"} 
+    return  jsonify({"message": "Hola desde Flask en Doncker!"})
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port = 5001)
+    app.run(host="0.0.0.0", port = 5001, debug= True)
